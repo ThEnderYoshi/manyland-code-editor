@@ -1,0 +1,214 @@
+/* Main stylesheet */
+
+/* Definitions */
+
+@font-face {
+  font-family: doid;
+  src: url("fonts/doid.ttf");
+}
+
+:root {
+  --color-accent-400: rgb(30, 207, 91);
+  --color-accent-600: rgb(10, 133, 92);
+  --color-neutral-200: rgb(219, 210, 199);
+  --color-neutral-400: rgb(208, 188, 178);
+  --color-neutral-800: rgb(44, 33, 30);
+  --size-small: 0.5rem;
+  --size-medium: 1rem;
+  --size-large: 2.5rem;
+
+  --palette-background: var(--color-neutral-200);
+  --palette-color: var(--color-neutral-800);
+}
+
+/* Resets */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+   <modified by ThEnderYoshi in 2023>
+*/
+
+* {
+  box-sizing: border-box;
+  color: var(--palette-color);
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+a {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* General */
+
+body {
+  height: 100vh; /* Compatablity with browsers that don't have svh units. */
+  height: 100svh;
+  background-color: var(--palette-background);
+  color: var(--palette-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Components */
+
+.container-medium {
+  --palette-background: var(--color-neutral-400);
+  --palette-color: var(--color-neutral-600);
+  width: min(calc(100% - 2rem), 75ch);
+  padding: var(--size-medium);
+  border-radius: 3px;
+  background-color: var(--palette-background);
+}
+
+.header {
+  padding-block-start: var(--size-large);
+}
+
+.header__navigation__item {
+  padding: var(--size-medium);
+  color: var(--color-neutral-800);
+  font-size: 1.25rem;
+  font-weight: bold;
+  transition: background-color 0.1s ease-out, color 0.1s ease-out;
+}
+
+.header__navigation__item:where(:hover, :focus) {
+  background-color: var(--color-neutral-200);
+  color: var(--color-accent-600);
+}
+
+.logo__title {
+  font-weight: bold;
+  font-size: 4em;
+}
+
+.logo__subtitle {
+  font-size: 2em;
+}
+
+.section__title {
+  font-size: var(--size-large);
+}
+
+/* Layout - General */
+
+.center-child {
+  display: flex;
+}
+
+.center-child > * {
+  margin: auto;
+}
+
+.padding-large {
+  padding: var(--size-large);
+}
+
+.padding-medium {
+  padding: var(--size-medium);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Layout - Flex */
+
+.flex-h {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-v {
+  display: flex;
+  flex-direction: column;
+}
+
+.fl-i-grow {
+  flex-grow: 1;
+}
+
+.fl-align-center {
+  align-items: center;
+}
+
+.fl-gap-large {
+  gap: var(--size-large);
+}
+
+.fl-gap-medium {
+  gap: var(--size-medium);
+}
+
+/* Colors */
+
+.bg-neutral-200 {
+  --palette-background: var(--color-neutral-200);
+  --palette-color: var(--color-neutral-600);
+  background-color: var(--palette-background);
+}
+
+.bg-neutral-400 {
+  --palette-background: var(--color-neutral-400);
+  --palette-color: var(--color-neutral-600);
+  background-color: var(--palette-background);
+}
+
+.box-shadow-small {
+  box-shadow: 0 4px 1.5rem -0.6rem var(--color-neutral-800);
+}
+
+.drop-shadow-small {
+  filter: drop-shadow(0 0 0.25rem var(--color-neutral-800));
+}
+
+/* Typography */
+
+.font-doid {
+  font-family: doid, monospace;
+}
